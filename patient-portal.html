@@ -9,16 +9,16 @@
 <body>
     <header class="header">
         <div class="container">
-            <a href="mainpage.html" class="logo">CareConnect</a>
+            <a href="index.html" class="logo">CareConnect</a>
             <div class="header-right">
                 <nav class="nav-links">
                     <ul>
                         <li class="dropdown">
-                            <a href="mainpage.html#services">Services</a>
+                            <a href="index.html#services">Services</a>
                             <div class="dropdown-content">
-                                <a href="#">Primary Care</a>
-                                <a href="#">Cardiology</a>
-                                <a href="#">Pediatrics</a>
+                                <a href="index.html#primary-care">Primary Care</a>
+                                <a href="index.html#cardiology">Cardiology</a>
+                                <a href="index.html#pediatrics">Pediatrics</a>
                             </div>
                         </li>
                         <li><a href="find-a-doctor.html">Find a Doctor</a></li>
@@ -37,11 +37,11 @@
             <div class="login-container">
                 <h2>Patient Portal Login</h2>
                 <p>Access your health records, appointments, and more.</p>
-                <form class="login-form">
+                <form class="login-form" action="/login" method="POST">
                     <input type="email" name="email" placeholder="Email Address" required>
                     <input type="password" name="password" placeholder="Password" required>
                     <button type="submit" class="cta-button">Login</button>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
                 </form>
             </div>
         </section>
@@ -52,8 +52,8 @@
             <h3>CareConnect</h3>
             <p>Your partner in health and wellness.</p>
             <ul class="footer-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Use</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Use</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <p class="copyright">&copy; 2024 CareConnect. All Rights Reserved.</p>

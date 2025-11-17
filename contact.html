@@ -9,16 +9,16 @@
 <body>
     <header class="header">
         <div class="container">
-            <a href="mainpage.html" class="logo">CareConnect</a>
+            <a href="index.html" class="logo">CareConnect</a>
             <div class="header-right">
                 <nav class="nav-links">
                     <ul>
                         <li class="dropdown">
-                            <a href="mainpage.html#services">Services</a>
+                            <a href="index.html#services">Services</a>
                             <div class="dropdown-content">
-                                <a href="#">Primary Care</a>
-                                <a href="#">Cardiology</a>
-                                <a href="#">Pediatrics</a>
+                                <a href="index.html#primary-care">Primary Care</a>
+                                <a href="index.html#cardiology">Cardiology</a>
+                                <a href="index.html#pediatrics">Pediatrics</a>
                             </div>
                         </li>
                         <li><a href="find-a-doctor.html">Find a Doctor</a></li>
@@ -26,7 +26,7 @@
                         <li><a href="contact.html" class="active">Contact Us</a></li>
                     </ul>
                 </nav>
-                <a href="#" class="nav-button">Book Now</a>
+                <a href="find-a-doctor.html" class="nav-button">Book Now</a>
                 <a href="patient-portal.html" class="profile-icon">P</a>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 <div class="contact-container">
                     <div class="contact-form">
                         <h3>Send a Message</h3>
-                        <form>
+                        <form action="/submit-contact" method="POST">
                             <input type="text" name="name" placeholder="Your Name" required>
                             <input type="email" name="email" placeholder="Your Email" required>
                             <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
@@ -54,11 +54,12 @@
                         <p><strong>Email:</strong> contact@careconnect.com</p>
                         <div class="map-container">
                             <iframe 
+                                title="Google Maps Location of CareConnect"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.216659892199!2d-73.98785368459365!3d40.75797497932693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c64801b9%3A0x7d6a5c35b3390e4d!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1673889092953!5m2!1sen!2sus" 
                                 width="100%" 
                                 height="250" 
                                 style="border:0;" 
-                                allowfullscreen="" 
+                                allowfullscreen 
                                 loading="lazy" 
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
@@ -74,8 +75,8 @@
             <h3>CareConnect</h3>
             <p>Your partner in health and wellness.</p>
             <ul class="footer-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Use</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Use</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <p class="copyright">&copy; 2024 CareConnect. All Rights Reserved.</p>
