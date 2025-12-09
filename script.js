@@ -1,8 +1,3 @@
-// ========================================
-// CARECONNECT WEBSITE JAVASCRIPT
-// ========================================
-
-// Dark Mode Toggle
 function initDarkMode() {
     const darkModeToggle = document.createElement('button');
     darkModeToggle.id = 'dark-mode-toggle';
@@ -10,7 +5,6 @@ function initDarkMode() {
     darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
     document.body.appendChild(darkModeToggle);
 
-    // Check for saved theme preference or default to light mode
     const currentTheme = localStorage.getItem('theme') || 'light';
     if (currentTheme === 'dark') {
         document.body.classList.add('dark-mode');
@@ -25,12 +19,10 @@ function initDarkMode() {
     });
 }
 
-// Mobile Menu Toggle
 function initMobileMenu() {
     const header = document.querySelector('.header');
     const navLinks = document.querySelector('.nav-links');
     
-    // Create hamburger menu button
     const hamburger = document.createElement('button');
     hamburger.className = 'hamburger-menu';
     hamburger.innerHTML = '<span></span><span></span><span></span>';
@@ -45,7 +37,6 @@ function initMobileMenu() {
         document.body.classList.toggle('menu-open');
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!header.contains(e.target) && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
@@ -55,7 +46,6 @@ function initMobileMenu() {
     });
 }
 
-// Smooth Scrolling for anchor links
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -78,7 +68,6 @@ function initSmoothScroll() {
     });
 }
 
-// Form Validation
 function initFormValidation() {
     const forms = document.querySelectorAll('form');
     
@@ -97,7 +86,6 @@ function initFormValidation() {
                     removeError(input);
                 }
 
-                // Email validation
                 if (input.type === 'email' && input.value.trim()) {
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(input.value)) {
@@ -113,7 +101,6 @@ function initFormValidation() {
             }
         });
 
-        // Remove error on input
         form.querySelectorAll('input, textarea').forEach(input => {
             input.addEventListener('input', () => {
                 input.classList.remove('error');
@@ -138,7 +125,6 @@ function removeError(input) {
     }
 }
 
-// Scroll Animation for elements
 function initScrollAnimation() {
     const observerOptions = {
         threshold: 0.1,
@@ -153,14 +139,12 @@ function initScrollAnimation() {
         });
     }, observerOptions);
 
-    // Observe elements
     document.querySelectorAll('.service-card, .doctor-card, .step, .team-member-card').forEach(el => {
         el.classList.add('animate-target');
         observer.observe(el);
     });
 }
 
-// Header scroll effect
 function initHeaderScroll() {
     const header = document.querySelector('.header');
     let lastScroll = 0;
@@ -178,7 +162,6 @@ function initHeaderScroll() {
     });
 }
 
-// Doctor Search Filter (for find-a-doctor page)
 function initDoctorSearch() {
     const searchForm = document.querySelector('.search-form-container form');
     if (!searchForm) return;
@@ -210,7 +193,6 @@ function initDoctorSearch() {
     });
 }
 
-// Back to Top Button
 function initBackToTop() {
     const backToTop = document.createElement('button');
     backToTop.id = 'back-to-top';
@@ -234,14 +216,12 @@ function initBackToTop() {
     });
 }
 
-// Loading Animation
 function initLoadingAnimation() {
     window.addEventListener('load', () => {
         document.body.classList.add('loaded');
     });
 }
 
-// Testimonial Slider (if multiple testimonials are added)
 function initTestimonialSlider() {
     const testimonials = document.querySelectorAll('.section-testimonial blockquote');
     if (testimonials.length <= 1) return;
@@ -255,7 +235,6 @@ function initTestimonialSlider() {
     }, 5000);
 }
 
-// Service Cards Interaction
 function initServiceCards() {
     const serviceCards = document.querySelectorAll('.service-card');
     
@@ -270,22 +249,18 @@ function initServiceCards() {
     });
 }
 
-// Accessibility: Keyboard Navigation Enhancement
 function initAccessibility() {
-    // Add skip to main content link
     const skipLink = document.createElement('a');
     skipLink.href = '#main';
     skipLink.className = 'skip-link';
     skipLink.textContent = 'Skip to main content';
     document.body.insertBefore(skipLink, document.body.firstChild);
 
-    // Add main id if not exists
     const main = document.querySelector('main');
     if (main && !main.id) {
         main.id = 'main';
     }
 
-    // Trap focus in mobile menu when open
     const navLinks = document.querySelector('.nav-links');
     const hamburger = document.querySelector('.hamburger-menu');
     
@@ -299,7 +274,6 @@ function initAccessibility() {
     }
 }
 
-// Initialize all functions when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     initDarkMode();
     initMobileMenu();
@@ -315,12 +289,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initAccessibility();
 });
 
-// Handle window resize
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-        // Close mobile menu on resize to desktop
         if (window.innerWidth > 768) {
             document.querySelector('.nav-links')?.classList.remove('active');
             document.querySelector('.hamburger-menu')?.classList.remove('active');
